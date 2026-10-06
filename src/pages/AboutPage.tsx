@@ -1,13 +1,15 @@
 import { PageHeading } from '../components/PageHeading'
 import { stack } from '../data/stack'
-import './AboutPage.css'
 
 export function AboutPage() {
   return (
     <>
       <PageHeading title="About Me" />
-      <section className="about-copy" aria-labelledby="about-intro">
-        <h2 className="visually-hidden" id="about-intro">
+      <section
+        className="grid max-w-[53rem] gap-4 text-base leading-[1.8] text-secondary"
+        aria-labelledby="about-intro"
+      >
+        <h2 className="sr-only" id="about-intro">
           Introduction
         </h2>
         <p>
@@ -43,22 +45,45 @@ export function AboutPage() {
           and become a better software engineer.
         </p>
       </section>
-      <section className="stack-section" aria-labelledby="stack-title">
-        <div className="section-heading-row">
-          <h2 id="stack-title">My Stack</h2>
-          <span className="section-kicker">Technologies I work with</span>
+      <section className="mt-12 md:mt-10" aria-labelledby="stack-title">
+        <div className="mb-4 flex items-baseline justify-between gap-4">
+          <h2
+            className="m-0 text-2xl font-semibold tracking-[-0.04em] text-primary"
+            id="stack-title"
+          >
+            My Stack
+          </h2>
+          <span className="m-0 text-sm text-muted">
+            Technologies I work with
+          </span>
         </div>
-        <div className="stack-groups">
+        <div className="border-t-2 border-accent">
           {stack.map((group) => (
-            <div className="stack-group" key={group.category}>
-              <h3>{group.category}</h3>
-              <ul className="technology-list">
+            <div
+              className="grid grid-cols-1 gap-3 border-b-2 border-accent py-4 md:grid-cols-[6rem_minmax(0,1fr)] md:gap-4 lg:grid-cols-[minmax(1.75rem,0.72fr)_minmax(0,2.3fr)] lg:py-8"
+              key={group.category}
+            >
+              <h3 className="my-0 flex items-center text-base font-bold tracking-[0.14em] text-[#656565] uppercase 2xl:text-2xl md:text-xs lg:text-sm">
+                {group.category}
+              </h3>
+              <ul className="m-0 flex list-none flex-wrap gap-x-4 gap-y-3 p-0 md:gap-3">
                 {group.technologies.map((technology) => (
-                  <li className="technology" key={technology.name}>
+                  <li
+                    className="inline-flex items-center gap-2 whitespace-nowrap text-sm text-[#d4d4d4] md:text-base"
+                    key={technology.name}
+                  >
                     {technology.icon ? (
-                      <img src={technology.icon} alt="" loading="lazy" />
+                      <img
+                        className="size-8 object-contain"
+                        src={technology.icon}
+                        alt=""
+                        loading="lazy"
+                      />
                     ) : (
-                      <span className="technology-fallback" aria-hidden="true">
+                      <span
+                        className="grid size-8 place-items-center rounded-lg border-2 border-[#51452b] bg-[#211d15] text-base font-bold text-accent"
+                        aria-hidden="true"
+                      >
                         {technology.name.slice(0, 1)}
                       </span>
                     )}
