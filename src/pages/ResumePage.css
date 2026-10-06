@@ -1,0 +1,81 @@
+.resume-sections {
+  display: grid;
+  gap: 2rem;
+}
+.resume-section h2 {
+  margin: 0 0 1.25rem;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  font-weight: bolder;
+  letter-spacing: -0.03em;
+}
+.timeline {
+  display: grid;
+  gap: 0;
+  margin: 0 0 0 0.75rem;
+  padding: 0 0 0 1.75rem;
+  border-left: 0.125rem solid #333;
+  list-style: none;
+}
+.timeline-entry {
+  position: relative;
+  padding: 0 0 1.5rem;
+}
+.timeline-entry:last-child {
+  padding-bottom: 0;
+}
+.timeline-dot {
+  position: absolute;
+  top: 0.25rem;
+  left: -2.188rem;
+  width: 0.85rem;
+  height: 0.85rem;
+  border: 0.25rem solid #332c1e;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0.25rem #171717;
+}
+.timeline-copy h3 {
+  margin: 0 0 0.25rem;
+  color: #efefef;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.timeline-organization,
+.timeline-date {
+  margin: 0;
+  color: #aaa;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.timeline-date {
+  color: var(--accent);
+}
+.timeline-details {
+  display: grid;
+  gap: 0.25rem;
+  margin: 0.5rem 0 0;
+  padding-left: 1rem;
+  color: #9f9f9f;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.timeline-details li {
+  position: relative;
+}
+.timeline-details li::before {
+  position: absolute;
+  top: 0.67em;
+  left: -0.9rem;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--accent);
+  content: '';
+}
+
+@media (max-width: 700px) {
+  .timeline-details {
+    font-size: 1rem;
+  }
+}

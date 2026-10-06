@@ -1,0 +1,210 @@
+.profile-panel {
+  position: sticky;
+  top: 2rem;
+  min-width: 0;
+  padding: 2rem 1.5rem 1.5rem;
+  text-align: center;
+}
+
+.profile-identity {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: inherit;
+  text-decoration: none;
+}
+
+.profile-photo {
+  width: 12.5rem;
+  height: 12.5rem;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: 50%;
+  border: 0.25rem solid var(--accent);
+  background: #111;
+}
+
+.profile-name {
+  margin-top: 1.25rem;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  font-weight: 650;
+  letter-spacing: -0.045em;
+}
+
+.profile-role {
+  margin-top: 0.5rem;
+  padding: 0.25rem 1rem;
+  color: #d0d0d0;
+  background: #1a1a1a;
+  border: 0.125rem solid #252525;
+  border-radius: 20rem;
+  font-size: 1rem;
+}
+
+.profile-divider {
+  height: 0.125rem;
+  margin: 1.5rem 0 1.25rem;
+  background: var(--accent);
+}
+
+.profile-details {
+  display: grid;
+  gap: 1rem;
+  text-align: left;
+}
+.profile-detail {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 1rem;
+  color: inherit;
+  text-decoration: none;
+}
+.detail-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 2.5rem;
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  border: 0.125rem solid #252525;
+  border-radius: 0.75rem;
+  background: #121212;
+}
+.detail-copy {
+  min-width: 0;
+  display: grid;
+  gap: 0.25rem;
+}
+.detail-label {
+  color: #777;
+  font-size: 0.75rem;
+  font-weight: bolder;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+.detail-value {
+  overflow: hidden;
+  color: #d9d9d9;
+  font-size: 0.75rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.profile-detail[href]:hover .detail-value {
+  color: var(--accent);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+.social-links a {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  color: #969696;
+  border: 0.125rem solid transparent;
+  border-radius: 0.75rem;
+  transition:
+    color 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease;
+}
+.social-links a:hover {
+  color: var(--accent);
+  border-color: #34302a;
+  background: #171511;
+}
+.linkedin-mark {
+  font-size: 1rem;
+  font-weight: 750;
+  letter-spacing: -0.08em;
+}
+
+@media (max-width: 980px) {
+  .profile-panel {
+    top: 1.25rem;
+    padding-inline: 1rem;
+  }
+  .profile-photo {
+    width: 11.5rem;
+    height: 11.5rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .profile-panel {
+    position: static;
+    width: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0 1rem;
+    padding: 1rem;
+    text-align: left;
+  }
+  .profile-identity {
+    display: grid;
+    grid-template-columns: 3.5rem minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    justify-items: start;
+    column-gap: 0.75rem;
+  }
+  .profile-photo {
+    width: 3.5rem;
+    height: 3.5rem;
+    grid-row: 1 / span 2;
+    border: 0.125rem solid var(--accent);
+  }
+  .profile-name {
+    align-self: end;
+    margin: 0;
+    font-size: 1rem;
+  }
+  .profile-role {
+    align-self: start;
+    margin: 0.25rem 0 0;
+    padding: 0;
+    color: #999;
+    border: 0;
+    background: transparent;
+    font-size: 0.7rem;
+  }
+  .profile-divider,
+  .profile-details {
+    display: none;
+  }
+  .social-links {
+    gap: 0.125rem;
+    margin: 0;
+  }
+  .social-links a {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .profile-panel {
+    padding: 0.75rem;
+  }
+  .profile-identity {
+    grid-template-columns: 3rem minmax(0, 1fr);
+    column-gap: 0.5rem;
+  }
+  .profile-photo {
+    width: 3rem;
+    height: 3rem;
+  }
+  .profile-name {
+    font-size: 0.9rem;
+  }
+  .social-links a {
+    width: 2rem;
+  }
+}

@@ -1,0 +1,116 @@
+.about-copy {
+  display: grid;
+  gap: 1rem;
+  max-width: 53rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+.about-copy p {
+  margin: 0;
+}
+.stack-section {
+  margin-top: 3rem;
+}
+.section-heading-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.section-heading-row h2 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  letter-spacing: -0.04em;
+}
+.stack-groups {
+  border-top: 0.125rem solid var(--accent);
+}
+.stack-group {
+  display: grid;
+  grid-template-columns: minmax(1.75rem, 0.72fr) minmax(0, 2.3fr);
+  gap: 1rem;
+  padding: 2rem 0;
+  border-bottom: 0.125rem solid var(--accent);
+}
+.stack-group h3 {
+  color: #656565;
+  align-items: center;
+  display: flex;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.technology-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.technology {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #d4d4d4;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+.technology img,
+.technology-fallback {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+}
+.technology-fallback {
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  border: 0.125rem solid #51452b;
+  border-radius: 0.5rem;
+  background: #211d15;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+@media (max-width: 1280px) {
+  .stack-group h3 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 980px) {
+  .stack-group {
+    grid-template-columns: 6rem minmax(0, 1fr);
+  }
+  .technology-list {
+    gap: 0.75rem;
+  }
+  .stack-group h3 {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .stack-section {
+    margin-top: 2.5rem;
+  }
+  .stack-group {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 1rem 0;
+  }
+  .stack-group h3 {
+    font-size: 1rem;
+  }
+  .technology-list {
+    gap: 0.75rem 1rem;
+  }
+  .technology {
+    font-size: 0.75rem;
+  }
+}
